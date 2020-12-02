@@ -1,4 +1,4 @@
-import CountDown from './CountDown';
+import CountDown from './components/CountDown';
 import './App.css';
 
 function App() {

@@ -1,27 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Laila&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* background-color: #1fd1f9;
-  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%); */
-  background-color: #537895;
-  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
-  background: #4776e6;
-  /* background: linear-gradient(
-    to right,
-    #8e54e9,
-    #4776e6
-  );   */
-
-  color: #fff;
-  font-family: 'Laila', serif;
-  color: #d4d4d4;
-  background-repeat: no-repeat;
+  background: url(./images/celebration.jpg) no-repeat center / cover;
+  color: rgb(230, 230, 230);
+  font-family: 'Mulish', sans-serif;
   height: 100vh;
   overflow: hidden;
   position: relative;
+  /* z-index: 0; */
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body * {
+  z-index: 1;
 }
 
 .container {
@@ -32,41 +35,84 @@ body {
   height: 70vh;
 }
 
-.countdown {
+.new-year-heading {
+  font-size: 6rem;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.countdown-time {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .time {
-  display: flex;
+  /* display: flex; */
+  display: inline-flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 15px;
-  padding: 15px;
+  margin: 10px;
+  /* padding: 5px; */
 }
 
 .time h2 {
-  font-size: 5rem;
+  font-size: 6rem;
+}
+
+.time h2 {
+  font-size: 6rem;
+}
+
+.time h2::after {
+  content: ' :';
+}
+
+.time:last-child h2::after {
+  content: '';
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  align-self: flex-start;
 }
 
-.new-year-countdown {
-  font-size: 8rem;
-  margin-top: 50px;
-  text-align: center;
+.time:first-child .title {
+  padding-left: 5px;
 }
 
 .new-year {
-  font-size: 25rem;
+  font-size: 20rem;
   position: absolute;
   left: 50%;
-  top: 50%;
-  color: rgba(0, 0, 0, 0.1);
-  z-index: -1;
+  bottom: 15px;
+  opacity: 0.35;
   transform: translateX(-50%);
+  z-index: 0;
+}
+
+@media (max-width: 576px) {
+  .new-year-heading {
+    font-size: 4rem;
+  }
+  .time {
+    margin: 5px;
+  }
+  .time h2 {
+    font-size: 2.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .time:first-child .title {
+    padding: 0;
+  }
+  .new-year {
+    font-size: 12rem;
+    bottom: 20px;
+  }
 }

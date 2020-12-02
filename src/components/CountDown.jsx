@@ -1,4 +1,5 @@
 import React from 'react';
+import Github from './Github';
 
 export default class CountDown extends React.Component {
   state = {
@@ -38,29 +39,31 @@ export default class CountDown extends React.Component {
   }
 
   render() {
+    const { nextYear, days, hours, minutes, seconds } = this.state;
     return (
       <>
+        <Github github="https://github.com/Basharath/new-year-countdown" />
+        <div className="new-year">{nextYear}</div>
         <div className="container">
-          <h1 className="new-year-countdown">New Year Countdown</h1>
-          <div className="countdown">
+          <h1 className="new-year-heading">New Year Countdown</h1>
+          <div className="countdown-time">
             <div className="time">
-              <h2 className="days">{this.state.days}</h2>
+              <h2 className="days">{days}</h2>
               <span className="title">Days</span>
             </div>
             <div className="time">
-              <h2 className="hours">{this.state.hours}</h2>
+              <h2 className="hours">{hours}</h2>
               <span className="title">Hours</span>
             </div>
             <div className="time">
-              <h2 className="minutes">{this.state.minutes}</h2>
+              <h2 className="minutes">{minutes}</h2>
               <span className="title">Minutes</span>
             </div>
             <div className="time">
-              <h2 className="seconds">{this.state.seconds}</h2>
+              <h2 className="seconds">{seconds}</h2>
               <span className="title">Seconds</span>
             </div>
           </div>
-          <div className="new-year">{this.state.nextYear}</div>
         </div>
       </>
     );
