@@ -1,6 +1,5 @@
 import React from 'react';
 import Github from './Github';
-
 export default class CountDown extends React.Component {
   state = {
     days: '',
@@ -28,7 +27,7 @@ export default class CountDown extends React.Component {
     ).getTime();
     const currentYearTime = currentDate.getTime();
     const leftTime = nextYearTime - currentYearTime;
-    const days = Math.floor(leftTime / 1000 / 60 / 60 / 24);
+    const days = ('0' + Math.floor(leftTime / 1000 / 60 / 60 / 24)).slice(-2);
     const hours = ('0' + (Math.floor(leftTime / 1000 / 60 / 60) % 24)).slice(
       -2
     );
@@ -43,6 +42,7 @@ export default class CountDown extends React.Component {
     return (
       <>
         <Github github="https://github.com/Basharath/new-year-countdown" />
+
         <div className="new-year">{nextYear}</div>
         <div className="container">
           <h1 className="new-year-heading">New Year Countdown</h1>

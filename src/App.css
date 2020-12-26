@@ -8,9 +8,8 @@ body {
   color: rgb(230, 230, 230);
   font-family: 'Mulish', sans-serif;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
-  /* z-index: 0; */
 }
 
 body::after {
@@ -88,31 +87,54 @@ body * {
   font-size: 20rem;
   position: absolute;
   left: 50%;
-  bottom: 15px;
+  bottom: 5%;
   opacity: 0.35;
   transform: translateX(-50%);
   z-index: 0;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 500px) {
   .new-year-heading {
-    font-size: 4rem;
+    font-size: 5rem;
   }
   .time {
     margin: 5px;
   }
   .time h2 {
-    font-size: 2.5rem;
+    font-size: 5rem;
   }
   .title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .time:first-child .title {
-    padding: 0;
+    padding: 0 10px;
+  }
+  .new-year {
+    font-size: 14rem;
+    bottom: 20%;
+  }
+}
+
+@media (max-width: 400px) {
+  .new-year-heading {
+    font-size: 5rem;
+  }
+  .time {
+    margin: 5px;
+  }
+  .time h2 {
+    font-size: 3.7rem;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .time:first-child .title {
+    padding: 0 6px;
   }
   .new-year {
     font-size: 12rem;
-    bottom: 25%;
+    bottom: 20%;
   }
 }
