@@ -27,7 +27,11 @@ export default class CountDown extends React.Component {
     ).getTime();
     const currentYearTime = currentDate.getTime();
     const leftTime = nextYearTime - currentYearTime;
-    const days = ('0' + Math.floor(leftTime / 1000 / 60 / 60 / 24)).slice(-2);
+
+    let d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
+
+    const days = d.toString().length === 1 ? '0' + d : d;
+
     const hours = ('0' + (Math.floor(leftTime / 1000 / 60 / 60) % 24)).slice(
       -2
     );
@@ -49,19 +53,22 @@ export default class CountDown extends React.Component {
           <div className="countdown-time">
             <div className="time">
               <h2 className="days">{days}</h2>
-              <span className="title">Days</span>
+              <p className="title">Days</p>
             </div>
+            <span>:</span>
             <div className="time">
               <h2 className="hours">{hours}</h2>
-              <span className="title">Hours</span>
+              <p className="title">Hours</p>
             </div>
+            <span>:</span>
             <div className="time">
               <h2 className="minutes">{minutes}</h2>
-              <span className="title">Minutes</span>
+              <p className="title">Minutes</p>
             </div>
+            <span>:</span>
             <div className="time">
               <h2 className="seconds">{seconds}</h2>
-              <span className="title">Seconds</span>
+              <p className="title">Seconds</p>
             </div>
           </div>
         </div>

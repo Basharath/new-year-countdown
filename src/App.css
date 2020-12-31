@@ -8,7 +8,6 @@ body {
   color: rgb(230, 230, 230);
   font-family: 'Mulish', sans-serif;
   height: 100vh;
-  /* overflow: hidden; */
   position: relative;
 }
 
@@ -46,41 +45,27 @@ body * {
   justify-content: center;
 }
 
-.time {
-  /* display: flex; */
-  display: inline-flex;
+.countdown-time .time {
+  display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin: 10px;
-  /* padding: 5px; */
+}
+
+.countdown-time span {
+  font-size: 6rem;
+  padding-bottom: 52px;
+  margin: 0 3px;
 }
 
 .time h2 {
   font-size: 6rem;
-}
-
-.time h2 {
-  font-size: 6rem;
-}
-
-.time h2::after {
-  content: ' :';
-}
-
-.time:last-child h2::after {
-  content: '';
 }
 
 .title {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  align-self: flex-start;
-}
-
-.time:first-child .title {
-  padding-left: 5px;
 }
 
 .new-year {
@@ -97,19 +82,22 @@ body * {
   .new-year-heading {
     font-size: 5rem;
   }
-  .time {
+  .countdown-time .time {
     margin: 5px;
   }
   .time h2 {
-    font-size: 5rem;
+    font-size: 5.4rem;
   }
   .title {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
-  .time:first-child .title {
-    padding: 0 10px;
+  .countdown-time span {
+    font-size: 5rem;
+    padding-bottom: 39px;
+    margin: 0 3px;
   }
+
   .new-year {
     font-size: 14rem;
     bottom: 20%;
@@ -120,21 +108,41 @@ body * {
   .new-year-heading {
     font-size: 5rem;
   }
-  .time {
-    margin: 5px;
-  }
   .time h2 {
-    font-size: 3.7rem;
+    font-size: 4.5rem;
   }
   .title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+  }
+  .countdown-time span {
+    font-size: 4.5rem;
+    padding-bottom: 35px;
   }
 
-  .time:first-child .title {
-    padding: 0 6px;
-  }
   .new-year {
     font-size: 12rem;
     bottom: 20%;
+  }
+}
+
+@media (max-width: 350px) {
+  .new-year-heading {
+    font-size: 4.5rem;
+  }
+
+  .time h2 {
+    font-size: 3rem;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .countdown-time span {
+    font-size: 3rem;
+    padding-bottom: 28px;
+  }
+
+  .new-year {
+    font-size: 10rem;
+    bottom: 15%;
   }
 }
